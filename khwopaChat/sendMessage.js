@@ -15,18 +15,18 @@ function sendMessage(event) {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            updateMessageForms(data.message);
-        } else {
-            updateMessageForms(data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error sending message:', error);
-        updateMessageForms('An error occurred. Please try again later.');
-    });
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                updateMessageForms(data.message);
+            } else {
+                updateMessageForms(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error sending message:', error);
+            updateMessageForms('An error occurred. Please try again later.');
+        });
 }
 
 function updateMessageForms(message) {
